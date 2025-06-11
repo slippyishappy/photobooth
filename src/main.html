@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Interactive Photobooth</title>
+</head>
+<body>
+    <div class="photobooth-container">
+        <!-- Coin Insertion Screen -->
+        <div id="coin-screen" class="screen active">
+            <div class="photobooth-frame">
+                <div class="screen-display">
+                    <div class="title">PHOTOBOOTH</div>
+                    <div class="instruction">INSERT COIN TO START</div>
+                    <div class="coin-slot" id="coin-slot">
+                        <div class="coin-icon">🪙</div>
+                        <div class="coin-text">Click to Insert Coin</div>
+                    </div>
+                    <div class="blinking-arrow">↓</div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Camera Screen -->
+        <div id="camera-screen" class="screen">
+            <div class="photobooth-frame">
+                <div class="camera-container">
+                    <video id="video" autoplay muted></video>
+                    <canvas id="canvas" style="display: none;"></canvas>
+                    <div class="preview-image" id="preview" style="display: none;">
+                        <img id="captured-image" alt="Captured photo">
+                    </div>
+                </div>
+                
+                <div class="controls">
+                    <div class="filter-controls">
+                        <h3>Choose Your Filter:</h3>
+                        <div class="filter-buttons">
+                            <button class="filter-btn active" data-filter="none">Normal</button>
+                            <button class="filter-btn" data-filter="sepia">Vintage</button>
+                            <button class="filter-btn" data-filter="grayscale">B&W</button>
+                            <button class="filter-btn" data-filter="blur">Dreamy</button>
+                            <button class="filter-btn" data-filter="contrast">Pop</button>
+                            <button class="filter-btn" data-filter="rainbow">Rainbow</button>
+                            <button class="filter-btn" data-filter="neon">Neon</button>
+                            <button class="filter-btn" data-filter="vintage">Retro</button>
+                        </div>
+                    </div>
+                    
+                    <div class="action-buttons">
+                        <button id="capture-btn" class="main-btn">📸 TAKE PHOTO</button>
+                        <button id="retake-btn" class="main-btn" style="display: none;">🔄 RETAKE</button>
+                        <button id="download-btn" class="main-btn" style="display: none;">💾 DOWNLOAD</button>
+                        <button id="new-session-btn" class="secondary-btn" style="display: none;">🆕 NEW SESSION</button>
+                    </div>
+                </div>
+                
+                <div class="countdown" id="countdown" style="display: none;">3</div>
+            </div>
+        </div>
+    </div>
+
+    <div class="photobooth-decorations">
+        <div class="light left-light"></div>
+        <div class="light right-light"></div>
+        <div class="curtain left-curtain"></div>
+        <div class="curtain right-curtain"></div>
+    </div>
+</body>
+</html>
